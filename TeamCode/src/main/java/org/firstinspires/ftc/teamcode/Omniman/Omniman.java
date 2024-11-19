@@ -22,8 +22,6 @@ public class Omniman {
     private final double LINEARARMPOSITION;
     private final double WANTEDSPECIMANARMPOSITION;
     private final double SPECIMANARMPOSITION;
-    private final double INTAKEPOWER;
-    private final double SPECIMENADJUSTER;
 
     //Motor Variables
     DcMotor linear_slide;
@@ -77,11 +75,11 @@ public class Omniman {
 
         //Intake code
         Intake = hwMap.servo.get("Intake");
-        INTAKEPOWER = Intake.getPosition();
+        Intake.setPosition(DriverArms.getIntakePower());
 
         //Specimen Arm adjuster
         Specimen_adjuster = hwMap.servo.get("Specimen_adjuster");
-        SPECIMENADJUSTER = Specimen_adjuster.getPosition();
+        Specimen_adjuster.setPosition(DriverArms.getSpecimenadjuster());
 
         //Odometery Pod Movers
         Ypodraiser = hwMap.servo.get("Ypodraiser");
